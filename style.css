@@ -1,0 +1,432 @@
+/* ============================================
+   BASE / ELEMENT SELECTORS
+   ============================================ */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: #eef1e7;
+  background-image:
+    linear-gradient(#d9dcc9 1px, transparent 1px),
+    linear-gradient(90deg, #d9dcc9 1px, transparent 1px);
+  background-size: 28px 28px;
+  color: #22322b;
+  font-family: "Work Sans", -apple-system, "Segoe UI", Arial, sans-serif;
+  font-size: 17px;
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4 {
+  font-family: "Fraunces", Georgia, "Times New Roman", serif;
+  color: #1f3b32;
+  margin: 0 0 0.4em 0;
+  font-weight: 600;
+}
+
+h2 {
+  font-size: 1.5rem;
+  border-bottom: 2px solid #d9dcc9;
+  padding-bottom: 0.3em;
+  margin-bottom: 0.6em;
+}
+
+p {
+  margin: 0 0 1em 0;
+  max-width: 62ch;
+}
+
+a {
+  color: #b0524a;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.15s ease, color 0.15s ease;
+}
+
+a:hover {
+  border-bottom-color: currentColor;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+hr {
+  border: none;
+  border-top: 2px dashed #d9dcc9;
+  margin: 2.5rem auto;
+  width: min(90%, 900px);
+}
+
+/* Visible keyboard focus everywhere, per accessibility requirement */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible {
+  outline: 3px solid #c68a2e;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* ============================================
+   HEADER  (element selector: header h1/h2/h3)
+   ============================================ */
+header {
+  background: #1f3b32;
+  background-image: linear-gradient(135deg, #1f3b32 0%, #16281f 100%);
+  color: #fdfaf1;
+  padding: 3rem 1.5rem 2.2rem;
+  text-align: center;
+  border-bottom: 6px solid #c68a2e;
+}
+
+header h1 {
+  color: #fdfaf1;
+  font-size: clamp(2.2rem, 5vw, 3.2rem);
+  letter-spacing: 0.01em;
+}
+
+header h2 {
+  color: #c68a2e;
+  border-bottom: none;
+  font-size: 1.15rem;
+  font-weight: 400;
+  font-style: italic;
+  margin-bottom: 0.2em;
+}
+
+header h3 {
+  color: #cdd8c9;
+  font-size: 1rem;
+  font-weight: 400;
+  font-family: "Work Sans", -apple-system, "Segoe UI", Arial, sans-serif;
+}
+
+/* ============================================
+   NAVIGATION  (class + descendant selectors)
+   ============================================ */
+.site-nav {
+  display: flex;
+  justify-content: center;
+  gap: 2.2rem;
+  background: #fffdf7;
+  padding: 0.9rem 1rem;
+  border-bottom: 1px solid #d9dcc9;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.site-nav a {
+  color: #22322b;
+  font-family: "Fraunces", Georgia, "Times New Roman", serif;
+  font-size: 1.05rem;
+  padding: 0.3em 0.2em;
+  border-bottom: 2px solid transparent;
+}
+
+.site-nav a:hover {
+  color: #1f3b32;
+  border-bottom-color: #c68a2e;
+}
+
+/* ============================================
+   MAIN / ABOUT SECTION  (ID selector: #about-me)
+   ============================================ */
+main {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2.5rem 1.5rem 1rem;
+}
+
+.layout-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.8rem;
+  align-items: stretch;
+}
+
+#about-me {
+  flex: 2 1 420px;
+  background: #fffdf7;
+  border: 1px solid #d9dcc9;
+  border-left: 6px solid #1f3b32;
+  border-radius: 4px;
+  padding: 1.8rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  align-items: flex-start;
+  box-shadow: 3px 3px 0 #d9dcc9;
+}
+
+#about-me p {
+  flex: 1 1 220px;
+}
+
+#about-me img {
+  border-radius: 4px;
+  border: 4px solid #fffdf7;
+  outline: 1px solid #d9dcc9;
+  box-shadow: 4px 4px 0 #c68a2e;
+  object-fit: cover;
+}
+
+.right-column {
+  flex: 1 1 240px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+}
+
+/* Sticky-note style boxes instead of matching cards */
+.hobbies-box,
+.websites-box {
+  background: #fff9e6;
+  border: 1px solid #d9dcc9;
+  border-radius: 2px;
+  padding: 1.2rem 1.4rem;
+  box-shadow: 2px 3px 6px rgba(34, 50, 43, 0.12);
+}
+
+.hobbies-box {
+  transform: rotate(-1.2deg);
+  border-top: 4px solid #b0524a;
+}
+
+.websites-box {
+  transform: rotate(1deg);
+  background: #eef6ee;
+  border-top: 4px solid #1f3b32;
+}
+
+.hobbies-box h4,
+.websites-box h4 {
+  margin-bottom: 0.5em;
+  font-size: 1.05rem;
+}
+
+.hobbies-box ol,
+.websites-box ul {
+  margin: 0;
+  padding-left: 1.2em;
+}
+
+.websites-box li a {
+  color: #1f3b32;
+  font-weight: 500;
+}
+
+.websites-box li a:hover {
+  color: #b0524a;
+}
+
+/* ============================================
+   HOLOGRAPHIC BUTTON  (single bold animated moment)
+   ============================================ */
+.holographic-container {
+  display: flex;
+  justify-content: center;
+  margin: 2.5rem 0 0.5rem;
+}
+
+.holographic-card {
+  font-family: "Fraunces", Georgia, "Times New Roman", serif;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #fdfaf1;
+  padding: 0.9rem 2.4rem;
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+  background: linear-gradient(120deg, #1f3b32, #b0524a, #c68a2e, #1f3b32);
+  background-size: 300% 300%;
+  background-position: 0% 50%;
+  box-shadow: 0 4px 14px rgba(34, 50, 43, 0.25);
+  transition: background-position 0.6s ease, transform 0.15s ease;
+}
+
+.holographic-card:hover {
+  background-position: 100% 50%;
+  transform: translateY(-2px);
+}
+
+/* ============================================
+   SCHEDULE TABLE  (ID selector: #schedule)
+   ============================================ */
+#schedule {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+#schedule table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fffdf7;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 3px 3px 0 #d9dcc9;
+}
+
+#schedule th,
+#schedule td {
+  padding: 0.75rem 1rem;
+  text-align: left;
+  border-bottom: 1px solid #d9dcc9;
+}
+
+#schedule thead th {
+  background: #1f3b32;
+  color: #fdfaf1;
+  font-family: "Fraunces", Georgia, "Times New Roman", serif;
+  font-weight: 600;
+}
+
+#schedule tbody tr:nth-child(even) {
+  background: #f6f4ea;
+}
+
+#schedule tbody tr:hover {
+  background: #fdeed2;
+}
+
+/* ============================================
+   MOOD BANNER  (class selector)
+   ============================================ */
+.mood {
+  max-width: 500px;
+  margin: 2.5rem auto;
+  text-align: center;
+  background: #c68a2e;
+  color: #2b1e08;
+  font-family: "Fraunces", Georgia, "Times New Roman", serif;
+  font-size: 1.15rem;
+  padding: 0.9rem 1.4rem;
+  transform: rotate(-1.5deg);
+  border-radius: 2px;
+  box-shadow: 3px 4px 8px rgba(34, 50, 43, 0.2);
+}
+
+/* ============================================
+   CONTACT FORM  (ID selector + descendant selector)
+   ============================================ */
+#contact-form {
+  max-width: 460px;
+  margin: 0 auto 2.5rem;
+  background: #fffdf7;
+  border: 1px solid #d9dcc9;
+  border-radius: 6px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  box-shadow: 3px 3px 0 #d9dcc9;
+}
+
+#contact-form label {
+  font-weight: 500;
+  color: #1f3b32;
+  margin-top: 0.8rem;
+}
+
+#contact-form input {
+  font-family: "Work Sans", -apple-system, "Segoe UI", Arial, sans-serif;
+  font-size: 1rem;
+  padding: 0.55rem 0.7rem;
+  border: 1px solid #d9dcc9;
+  border-radius: 4px;
+  background: #eef1e7;
+  color: #22322b;
+}
+
+#contact-form input:focus {
+  border-color: #c68a2e;
+}
+
+#contact-form input[type="color"] {
+  padding: 0.25rem;
+  height: 2.6rem;
+  cursor: pointer;
+}
+
+#contact-form button[type="submit"] {
+  margin-top: 1.4rem;
+  align-self: flex-start;
+  background: #1f3b32;
+  color: #fdfaf1;
+  border: none;
+  padding: 0.65rem 1.8rem;
+  border-radius: 999px;
+  font-family: "Work Sans", -apple-system, "Segoe UI", Arial, sans-serif;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+#contact-form button[type="submit"]:hover {
+  background: #a06f21;
+}
+
+/* ============================================
+   SOCIAL LINKS + FOOTER  (class + descendant selector)
+   ============================================ */
+#contact {
+  background: #16281f;
+  padding: 2.2rem 1.5rem 1.6rem;
+  text-align: center;
+}
+
+.social-links {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 1.2rem;
+  padding: 0;
+  margin: 0 0 1.2rem;
+}
+
+.social-links a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #fdfaf1;
+  color: #1f3b32;
+  border-bottom: none;
+  font-size: 1.1rem;
+  transition: background 0.15s ease, color 0.15s ease, transform 0.15s ease;
+}
+
+.social-links a:hover {
+  background: #c68a2e;
+  color: #16281f;
+  transform: translateY(-2px);
+}
+
+footer p {
+  color: #cdd8c9;
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+/* ============================================
+   SMALL-SCREEN ADJUSTMENTS
+   ============================================ */
+@media (max-width: 640px) {
+  .layout-row {
+    flex-direction: column;
+  }
+
+  .hobbies-box,
+  .websites-box {
+    transform: none;
+  }
+
+  #about-me {
+    flex-direction: column;
+  }
+}
